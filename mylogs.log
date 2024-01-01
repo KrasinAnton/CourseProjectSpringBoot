@@ -1,0 +1,294 @@
+20:00:55.273 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
+20:00:55.366 [main] INFO  r.k.c.CourseProjectSpringBootApplication - Starting CourseProjectSpringBootApplication using Java 17.0.6 on Dell-PK with PID 7872 (D:\Antonio\UrFU\Items\2 course\software technologies\My_Projects\Course_2\CourseProjectSpringBoot\target\classes started by Dell in D:\Antonio\UrFU\Items\2 course\software technologies\My_Projects\Course_2\CourseProjectSpringBoot)
+20:00:55.370 [main] INFO  r.k.c.CourseProjectSpringBootApplication - No active profile set, falling back to 1 default profile: "default"
+20:01:00.991 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+20:01:01.221 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 164 ms. Found 3 JPA repository interfaces.
+20:01:04.274 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8011 (http)
+20:01:04.334 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8011"]
+20:01:04.339 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+20:01:04.340 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.82]
+20:01:04.637 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+20:01:04.637 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 8965 ms
+20:01:05.848 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+20:01:06.110 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+20:01:06.743 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+20:01:07.206 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+20:01:08.125 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+20:01:08.286 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+20:01:10.996 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+20:01:11.063 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+20:01:13.062 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4028aab2, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@37aea657, org.springframework.security.web.context.SecurityContextPersistenceFilter@23e297d9, org.springframework.security.web.header.HeaderWriterFilter@3113595e, org.springframework.security.web.csrf.CsrfFilter@5857d723, org.springframework.security.web.authentication.logout.LogoutFilter@579ee82, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1693d505, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@a74c940, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@66576bd2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3ca9d3b2, org.springframework.security.web.session.SessionManagementFilter@7091a016, org.springframework.security.web.access.ExceptionTranslationFilter@7cb38a6a, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@67730dab]
+20:01:13.233 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+20:01:13.965 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+20:01:15.209 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 3 endpoint(s) beneath base path '/actuator'
+20:01:15.351 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8011"]
+20:01:15.468 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8011 (http) with context path ''
+20:01:15.529 [main] INFO  r.k.c.CourseProjectSpringBootApplication - Started CourseProjectSpringBootApplication in 22.271 seconds (JVM running for 28.212)
+20:11:40.055 [http-nio-8011-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+20:11:40.055 [http-nio-8011-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+20:11:40.059 [http-nio-8011-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+20:11:49.297 [http-nio-8011-exec-4] WARN  o.a.c.util.SessionIdGeneratorBase - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [172] milliseconds.
+20:11:56.469 [http-nio-8011-exec-6] INFO  r.k.c.controller.StaffController - /list -> connections
+20:12:13.164 [http-nio-8011-exec-9] INFO  r.k.c.controller.StaffController - /list -> connections
+21:02:32.383 [main] ERROR o.s.boot.SpringApplication - Application run failed
+java.lang.IllegalStateException: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.joran.action.AppenderAction - Could not create an Appender of type [ch.qos.logback.classic.db.DBAppender]. ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type ch.qos.logback.classic.db.DBAppender
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@12:76 - ActionException in Action for tag [appender] ch.qos.logback.core.joran.spi.ActionException: ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type ch.qos.logback.classic.db.DBAppender
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - Could not find an appender named [DATABASE]. Did you define it below instead of above in the configuration file?
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - See http://logback.qos.ch/codes.html#appender_order for more details.
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:344)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:298)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:246)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:223)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:178)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:171)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:145)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:133)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:85)
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:66)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:120)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:114)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:65)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:344)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:302)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1300)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1289)
+	at ru.krasin.courseprojectspringboot.CourseProjectSpringBootApplication.main(CourseProjectSpringBootApplication.java:10)
+Caused by: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.joran.action.AppenderAction - Could not create an Appender of type [ch.qos.logback.classic.db.DBAppender]. ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type ch.qos.logback.classic.db.DBAppender
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@12:76 - ActionException in Action for tag [appender] ch.qos.logback.core.joran.spi.ActionException: ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type ch.qos.logback.classic.db.DBAppender
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - Could not find an appender named [DATABASE]. Did you define it below instead of above in the configuration file?
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - See http://logback.qos.ch/codes.html#appender_order for more details.
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.reportConfigurationErrorsIfNecessary(LogbackLoggingSystem.java:189)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:170)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.reinitialize(LogbackLoggingSystem.java:243)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithConventions(AbstractLoggingSystem.java:73)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:60)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:132)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:329)
+	... 18 common frames omitted
+	Suppressed: ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type ch.qos.logback.classic.db.DBAppender
+		at ch.qos.logback.core.util.OptionHelper.instantiateByClassNameAndParameter(OptionHelper.java:68)
+		at ch.qos.logback.core.util.OptionHelper.instantiateByClassName(OptionHelper.java:44)
+		at ch.qos.logback.core.util.OptionHelper.instantiateByClassName(OptionHelper.java:33)
+		at ch.qos.logback.core.joran.action.AppenderAction.begin(AppenderAction.java:52)
+		at ch.qos.logback.core.joran.spi.Interpreter.callBeginAction(Interpreter.java:269)
+		at ch.qos.logback.core.joran.spi.Interpreter.startElement(Interpreter.java:145)
+		at ch.qos.logback.core.joran.spi.Interpreter.startElement(Interpreter.java:128)
+		at ch.qos.logback.core.joran.spi.EventPlayer.play(EventPlayer.java:50)
+		at ch.qos.logback.core.joran.GenericConfigurator.doConfigure(GenericConfigurator.java:165)
+		at ch.qos.logback.core.joran.GenericConfigurator.doConfigure(GenericConfigurator.java:152)
+		at ch.qos.logback.core.joran.GenericConfigurator.doConfigure(GenericConfigurator.java:110)
+		at ch.qos.logback.core.joran.GenericConfigurator.doConfigure(GenericConfigurator.java:53)
+		at org.springframework.boot.logging.logback.LogbackLoggingSystem.configureByResourceUrl(LogbackLoggingSystem.java:199)
+		at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:165)
+		... 23 common frames omitted
+	Caused by: java.lang.ClassNotFoundException: ch.qos.logback.classic.db.DBAppender
+		at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+		at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+		at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)
+		at ch.qos.logback.core.util.OptionHelper.instantiateByClassNameAndParameter(OptionHelper.java:55)
+		... 36 common frames omitted
+	Suppressed: ch.qos.logback.core.joran.spi.ActionException: ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type ch.qos.logback.classic.db.DBAppender
+		at ch.qos.logback.core.joran.action.AppenderAction.begin(AppenderAction.java:76)
+		at ch.qos.logback.core.joran.spi.Interpreter.callBeginAction(Interpreter.java:269)
+		at ch.qos.logback.core.joran.spi.Interpreter.startElement(Interpreter.java:145)
+		at ch.qos.logback.core.joran.spi.Interpreter.startElement(Interpreter.java:128)
+		at ch.qos.logback.core.joran.spi.EventPlayer.play(EventPlayer.java:50)
+		at ch.qos.logback.core.joran.GenericConfigurator.doConfigure(GenericConfigurator.java:165)
+		at ch.qos.logback.core.joran.GenericConfigurator.doConfigure(GenericConfigurator.java:152)
+		at ch.qos.logback.core.joran.GenericConfigurator.doConfigure(GenericConfigurator.java:110)
+		at ch.qos.logback.core.joran.GenericConfigurator.doConfigure(GenericConfigurator.java:53)
+		at org.springframework.boot.logging.logback.LogbackLoggingSystem.configureByResourceUrl(LogbackLoggingSystem.java:199)
+		at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:165)
+		... 23 common frames omitted
+	Caused by: ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type ch.qos.logback.classic.db.DBAppender
+21:15:34.216 [main] ERROR o.s.boot.SpringApplication - Application run failed
+java.lang.IllegalStateException: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.joran.action.AppenderAction - Could not create an Appender of type [ch.qos.logback.classic.db.DBAppender]. ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type ch.qos.logback.classic.db.DBAppender
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@12:76 - ActionException in Action for tag [appender] ch.qos.logback.core.joran.spi.ActionException: ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type ch.qos.logback.classic.db.DBAppender
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - Could not find an appender named [DATABASE]. Did you define it below instead of above in the configuration file?
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - See http://logback.qos.ch/codes.html#appender_order for more details.
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:344)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:298)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:246)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:223)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:178)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:171)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:145)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:133)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:85)
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:66)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:120)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:114)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:65)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:344)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:302)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1300)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1289)
+	at ru.krasin.courseprojectspringboot.CourseProjectSpringBootApplication.main(CourseProjectSpringBootApplication.java:10)
+Caused by: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.joran.action.AppenderAction - Could not create an Appender of type [ch.qos.logback.classic.db.DBAppender]. ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type ch.qos.logback.classic.db.DBAppender
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@12:76 - ActionException in Action for tag [appender] ch.qos.logback.core.joran.spi.ActionException: ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type ch.qos.logback.classic.db.DBAppender
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - Could not find an appender named [DATABASE]. Did you define it below instead of above in the configuration file?
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - See http://logback.qos.ch/codes.html#appender_order for more details.
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.reportConfigurationErrorsIfNecessary(LogbackLoggingSystem.java:189)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:170)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.reinitialize(LogbackLoggingSystem.java:243)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithConventions(AbstractLoggingSystem.java:73)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:60)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:132)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:329)
+	... 18 common frames omitted
+	Suppressed: ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type ch.qos.logback.classic.db.DBAppender
+		at ch.qos.logback.core.util.OptionHelper.instantiateByClassNameAndParameter(OptionHelper.java:68)
+		at ch.qos.logback.core.util.OptionHelper.instantiateByClassName(OptionHelper.java:44)
+		at ch.qos.logback.core.util.OptionHelper.instantiateByClassName(OptionHelper.java:33)
+		at ch.qos.logback.core.joran.action.AppenderAction.begin(AppenderAction.java:52)
+		at ch.qos.logback.core.joran.spi.Interpreter.callBeginAction(Interpreter.java:269)
+		at ch.qos.logback.core.joran.spi.Interpreter.startElement(Interpreter.java:145)
+		at ch.qos.logback.core.joran.spi.Interpreter.startElement(Interpreter.java:128)
+		at ch.qos.logback.core.joran.spi.EventPlayer.play(EventPlayer.java:50)
+		at ch.qos.logback.core.joran.GenericConfigurator.doConfigure(GenericConfigurator.java:165)
+		at ch.qos.logback.core.joran.GenericConfigurator.doConfigure(GenericConfigurator.java:152)
+		at ch.qos.logback.core.joran.GenericConfigurator.doConfigure(GenericConfigurator.java:110)
+		at ch.qos.logback.core.joran.GenericConfigurator.doConfigure(GenericConfigurator.java:53)
+		at org.springframework.boot.logging.logback.LogbackLoggingSystem.configureByResourceUrl(LogbackLoggingSystem.java:199)
+		at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:165)
+		... 23 common frames omitted
+	Caused by: java.lang.ClassNotFoundException: ch.qos.logback.classic.db.DBAppender
+		at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+		at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+		at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)
+		at ch.qos.logback.core.util.OptionHelper.instantiateByClassNameAndParameter(OptionHelper.java:55)
+		... 36 common frames omitted
+	Suppressed: ch.qos.logback.core.joran.spi.ActionException: ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type ch.qos.logback.classic.db.DBAppender
+		at ch.qos.logback.core.joran.action.AppenderAction.begin(AppenderAction.java:76)
+		at ch.qos.logback.core.joran.spi.Interpreter.callBeginAction(Interpreter.java:269)
+		at ch.qos.logback.core.joran.spi.Interpreter.startElement(Interpreter.java:145)
+		at ch.qos.logback.core.joran.spi.Interpreter.startElement(Interpreter.java:128)
+		at ch.qos.logback.core.joran.spi.EventPlayer.play(EventPlayer.java:50)
+		at ch.qos.logback.core.joran.GenericConfigurator.doConfigure(GenericConfigurator.java:165)
+		at ch.qos.logback.core.joran.GenericConfigurator.doConfigure(GenericConfigurator.java:152)
+		at ch.qos.logback.core.joran.GenericConfigurator.doConfigure(GenericConfigurator.java:110)
+		at ch.qos.logback.core.joran.GenericConfigurator.doConfigure(GenericConfigurator.java:53)
+		at org.springframework.boot.logging.logback.LogbackLoggingSystem.configureByResourceUrl(LogbackLoggingSystem.java:199)
+		at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:165)
+		... 23 common frames omitted
+	Caused by: ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type ch.qos.logback.classic.db.DBAppender
+01:36:38.786 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
+01:36:38.929 [main] INFO  r.k.c.CourseProjectSpringBootApplication - Starting CourseProjectSpringBootApplication using Java 17.0.6 on Dell-PK with PID 6900 (D:\Antonio\UrFU\Items\2 course\software technologies\My_Projects\Course_2\CourseProjectSpringBoot\target\classes started by Dell in D:\Antonio\UrFU\Items\2 course\software technologies\My_Projects\Course_2\CourseProjectSpringBoot)
+01:36:38.952 [main] INFO  r.k.c.CourseProjectSpringBootApplication - No active profile set, falling back to 1 default profile: "default"
+01:36:41.680 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+01:36:41.823 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 121 ms. Found 3 JPA repository interfaces.
+01:36:43.485 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8011 (http)
+01:36:43.506 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8011"]
+01:36:43.509 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+01:36:43.509 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.82]
+01:36:43.750 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+01:36:43.751 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4560 ms
+01:36:44.439 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+01:36:44.601 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+01:36:45.029 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+01:36:45.292 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+01:36:45.904 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+01:36:45.979 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+01:36:47.777 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+01:36:47.805 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+01:36:49.166 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2af31aba, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@682d8dad, org.springframework.security.web.context.SecurityContextPersistenceFilter@51bc649e, org.springframework.security.web.header.HeaderWriterFilter@3f2a7ca0, org.springframework.security.web.csrf.CsrfFilter@84e43fb, org.springframework.security.web.authentication.logout.LogoutFilter@2dbf8cfc, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4028aab2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@531b1778, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@ecfff32, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1aebe759, org.springframework.security.web.session.SessionManagementFilter@5e8e02a3, org.springframework.security.web.access.ExceptionTranslationFilter@7091a016, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@360d3f47]
+01:36:49.281 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+01:36:49.656 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+01:36:50.528 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 3 endpoint(s) beneath base path '/actuator'
+01:36:50.600 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8011"]
+01:36:50.662 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8011 (http) with context path ''
+01:36:50.696 [main] INFO  r.k.c.CourseProjectSpringBootApplication - Started CourseProjectSpringBootApplication in 13.077 seconds (JVM running for 15.971)
+01:38:28.718 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
+01:38:28.827 [main] INFO  r.k.c.CourseProjectSpringBootApplication - Starting CourseProjectSpringBootApplication using Java 17.0.6 on Dell-PK with PID 6672 (D:\Antonio\UrFU\Items\2 course\software technologies\My_Projects\Course_2\CourseProjectSpringBoot\target\classes started by Dell in D:\Antonio\UrFU\Items\2 course\software technologies\My_Projects\Course_2\CourseProjectSpringBoot)
+01:38:28.834 [main] INFO  r.k.c.CourseProjectSpringBootApplication - No active profile set, falling back to 1 default profile: "default"
+01:38:31.780 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+01:38:31.948 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 141 ms. Found 3 JPA repository interfaces.
+01:38:33.460 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8011 (http)
+01:38:33.477 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8011"]
+01:38:33.480 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+01:38:33.481 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.82]
+01:38:33.742 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+01:38:33.742 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4752 ms
+01:38:34.371 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+01:38:34.493 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+01:38:34.918 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+01:38:35.191 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+01:38:35.807 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+01:38:35.886 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+01:38:37.866 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+01:38:37.895 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+01:38:39.322 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@37aea657, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3ca9d3b2, org.springframework.security.web.context.SecurityContextPersistenceFilter@5e8e02a3, org.springframework.security.web.header.HeaderWriterFilter@109188b4, org.springframework.security.web.csrf.CsrfFilter@4b518645, org.springframework.security.web.authentication.logout.LogoutFilter@127320df, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3d195d15, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@66576bd2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@51bc649e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2f8b48c3, org.springframework.security.web.session.SessionManagementFilter@14580edc, org.springframework.security.web.access.ExceptionTranslationFilter@7983a5d5, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@466cca41]
+01:38:39.438 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+01:38:39.824 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+01:38:40.749 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 3 endpoint(s) beneath base path '/actuator'
+01:38:40.830 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8011"]
+01:38:40.892 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8011 (http) with context path ''
+01:38:40.927 [main] INFO  r.k.c.CourseProjectSpringBootApplication - Started CourseProjectSpringBootApplication in 13.345 seconds (JVM running for 16.116)
+16:16:11.336 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
+16:16:11.393 [main] INFO  r.k.c.CourseProjectSpringBootApplication - Starting CourseProjectSpringBootApplication using Java 17.0.6 on Dell-PK with PID 6048 (D:\Antonio\UrFU\Items\2 course\software technologies\My_Projects\Course_2\CourseProjectSpringBoot\target\classes started by Dell in D:\Antonio\UrFU\Items\2 course\software technologies\My_Projects\Course_2\CourseProjectSpringBoot)
+16:16:11.422 [main] INFO  r.k.c.CourseProjectSpringBootApplication - No active profile set, falling back to 1 default profile: "default"
+16:16:46.490 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+16:16:52.517 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 4916 ms. Found 3 JPA repository interfaces.
+16:17:17.130 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8011 (http)
+16:17:17.290 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8011"]
+16:17:17.322 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16:17:17.322 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.82]
+16:17:18.575 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+16:17:18.575 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 66787 ms
+16:17:21.424 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+16:17:21.879 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+16:17:22.599 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+16:17:23.116 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+16:17:24.204 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+16:17:24.408 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+16:17:27.460 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+16:17:27.528 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+16:17:29.970 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@9d2c0ed, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@272485a6, org.springframework.security.web.context.SecurityContextPersistenceFilter@1abd1a28, org.springframework.security.web.header.HeaderWriterFilter@45a05350, org.springframework.security.web.csrf.CsrfFilter@7b9b6a56, org.springframework.security.web.authentication.logout.LogoutFilter@1b08d26f, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@677d4cea, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@39a1e1e6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2daa5092, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6aed4a23, org.springframework.security.web.session.SessionManagementFilter@74ed7111, org.springframework.security.web.access.ExceptionTranslationFilter@3da6950f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@386ea60f]
+16:17:30.229 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+16:17:31.070 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+16:17:32.886 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 3 endpoint(s) beneath base path '/actuator'
+16:17:33.022 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8011"]
+16:17:33.199 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8011 (http) with context path ''
+16:17:33.295 [main] INFO  r.k.c.CourseProjectSpringBootApplication - Started CourseProjectSpringBootApplication in 122.848 seconds (JVM running for 282.06)
+16:28:50.652 [http-nio-8011-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+16:28:50.653 [http-nio-8011-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+16:28:50.660 [http-nio-8011-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 5 ms
+16:28:50.908 [http-nio-8011-exec-1] INFO  r.k.c.controller.StaffController - /list -> connections
+16:29:11.485 [http-nio-8011-exec-6] WARN  o.a.c.util.SessionIdGeneratorBase - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [178] milliseconds.
+16:29:13.677 [http-nio-8011-exec-8] INFO  r.k.c.controller.StaffController - /list -> connections
+17:24:05.273 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
+17:24:05.478 [main] INFO  r.k.c.CourseProjectSpringBootApplication - Starting CourseProjectSpringBootApplication using Java 17.0.6 on Dell-PK with PID 8072 (D:\Antonio\UrFU\Items\2 course\software technologies\My_Projects\Course_2\CourseProjectSpringBoot\target\classes started by Dell in D:\Antonio\UrFU\Items\2 course\software technologies\My_Projects\Course_2\CourseProjectSpringBoot)
+17:24:05.485 [main] INFO  r.k.c.CourseProjectSpringBootApplication - No active profile set, falling back to 1 default profile: "default"
+17:24:11.082 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+17:24:11.308 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 163 ms. Found 3 JPA repository interfaces.
+17:24:13.864 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8011 (http)
+17:24:13.907 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8011"]
+17:24:13.910 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+17:24:13.911 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.82]
+17:24:14.279 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+17:24:14.280 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 8419 ms
+17:24:15.529 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+17:24:15.788 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+17:24:16.516 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+17:24:16.984 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+17:24:17.868 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+17:24:18.020 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+17:24:20.836 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+17:24:20.886 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+17:24:22.953 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3d195d15, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@17b387ef, org.springframework.security.web.context.SecurityContextPersistenceFilter@3113595e, org.springframework.security.web.header.HeaderWriterFilter@629cf53c, org.springframework.security.web.csrf.CsrfFilter@294bb6ae, org.springframework.security.web.authentication.logout.LogoutFilter@18d14de3, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@7c3ae369, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7091a016, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@14580edc, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@489b7559, org.springframework.security.web.session.SessionManagementFilter@3182143c, org.springframework.security.web.access.ExceptionTranslationFilter@1299c874, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2e51ede1]
+17:24:23.148 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+17:24:23.752 [main] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+17:24:25.056 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 3 endpoint(s) beneath base path '/actuator'
+17:24:25.146 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8011"]
+17:24:25.256 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8011 (http) with context path ''
+17:24:25.317 [main] INFO  r.k.c.CourseProjectSpringBootApplication - Started CourseProjectSpringBootApplication in 21.828 seconds (JVM running for 33.117)
+17:24:47.526 [http-nio-8011-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+17:24:47.527 [http-nio-8011-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+17:24:47.530 [http-nio-8011-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+17:24:47.685 [http-nio-8011-exec-1] INFO  r.k.c.controller.StaffController - /list -> connections

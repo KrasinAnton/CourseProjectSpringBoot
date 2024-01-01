@@ -1,0 +1,14 @@
+package ru.krasin.courseprojectspringboot.service;
+
+import ru.krasin.courseprojectspringboot.dto.UserDto;
+import ru.krasin.courseprojectspringboot.entity.User;
+
+import java.util.List;
+
+public interface UserService {
+    void saveUser(UserDto userDto);
+
+    User findUserByEmail(String email);
+
+    List<UserDto> findAllUsers();
+}
