@@ -20,9 +20,9 @@ public class StaffController {
     @Autowired
     private StaffRepository staffRepository;
 
-    @GetMapping("/list")
+    @GetMapping("/staff")
     public ModelAndView getAllStaff() {
-        log.info("/list -> connections");
+        log.info("/staff -> connections");
         ModelAndView mav = new ModelAndView("list-staff");
         mav.addObject("staff", staffRepository.findAll());
         return mav;
@@ -38,7 +38,7 @@ public class StaffController {
     @PostMapping("/saveStaff")
     public RedirectView saveStaff(@ModelAttribute Staff staff) {
         staffRepository.save(staff);
-        return new RedirectView("list");
+        return new RedirectView("staff");
     }
 
     @GetMapping("/showUpdateForm")
@@ -56,7 +56,7 @@ public class StaffController {
     @GetMapping("/deleteStaff")
     public RedirectView deleteStaff(@RequestParam Long staffId) {
         staffRepository.deleteById(staffId);
-        return new RedirectView("list");
+        return new RedirectView("staff");
     }
 
 }
