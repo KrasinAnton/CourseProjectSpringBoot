@@ -2,6 +2,8 @@ package ru.krasin.courseprojectspringboot.controller;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -11,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 import ru.krasin.courseprojectspringboot.entity.Staff;
 import ru.krasin.courseprojectspringboot.repository.StaffRepository;
+import ru.krasin.courseprojectspringboot.service.UserActionService;
 
 import java.util.Optional;
 
@@ -19,12 +22,24 @@ import java.util.Optional;
 public class StaffController {
     @Autowired
     private StaffRepository staffRepository;
-
+    @Autowired
+    private UserActionService userActionService; // Инжектирование UserActionService
     @GetMapping("/staff")
     public ModelAndView getAllStaff() {
-        log.info("/staff -> connections");
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String email = authentication.getName(); // Получение email текущего аутентифицированного пользователя
+        System.out.println("Received userEmail: " + email);
+
         ModelAndView mav = new ModelAndView("list-staff");
-        mav.addObject("staff", staffRepository.findAll());
+
+        if (authentication.getAuthorities().stream().anyMatch(r -> r.getAuthority().equals("ROLE_USER"))) {
+            // Если текущий пользователь имеет роль ROLE_USER, отображаем только его записи
+            mav.addObject("staff", staffRepository.findByUserEmail(email));
+        } else {
+            // Если у пользователя другая роль, показываем все записи
+            mav.addObject("staff", staffRepository.findAll());
+        }
+
         return mav;
     }
 
@@ -37,7 +52,16 @@ public class StaffController {
     }
     @PostMapping("/saveStaff")
     public RedirectView saveStaff(@ModelAttribute Staff staff) {
-        staffRepository.save(staff);
+        // Получение email текущего аутентифицированного пользователя
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String userEmail = authentication.getName(); // предполагается, что email пользователя хранится в имени пользователя
+
+        // Установка userEmail для сотрудника
+        staff.setUserEmail(userEmail);
+
+        // Сохранение staff с указанием email пользователя
+        Staff savedStaff = staffRepository.save(staff);
+        userActionService.logUserAction(userEmail, "Added new staff");
         return new RedirectView("staff");
     }
 
@@ -45,6 +69,9 @@ public class StaffController {
     public ModelAndView showUpdateForm(@RequestParam Long staffId) {
         ModelAndView mav = new ModelAndView("add-staff-form");
         Optional<Staff> optionalStaff = staffRepository.findById(staffId);
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String userEmail = authentication.getName();
+        userActionService.logUserAction(userEmail, "Show Update Form");
         Staff staff = new Staff();
         if (optionalStaff.isPresent()) {
             staff = optionalStaff.get();
@@ -55,8 +82,14 @@ public class StaffController {
 
     @GetMapping("/deleteStaff")
     public RedirectView deleteStaff(@RequestParam Long staffId) {
+
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String userEmail = authentication.getName();
+        userActionService.logUserAction(userEmail, "Delete Staff");
         staffRepository.deleteById(staffId);
         return new RedirectView("staff");
     }
+
+
 
 }

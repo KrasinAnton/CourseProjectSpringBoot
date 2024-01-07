@@ -2,8 +2,8 @@ package ru.krasin.courseprojectspringboot.entity;
 
 
 public enum RoleEnum {
-    READ_ONLY,
-    USER,
-    ADMIN
+    ROLE_READ,
+    ROLE_USER,
+    ROLE_ADMIN
 }
 

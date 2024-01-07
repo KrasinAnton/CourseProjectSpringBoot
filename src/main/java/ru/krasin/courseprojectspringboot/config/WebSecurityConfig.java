@@ -13,12 +13,10 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig {
-
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
-
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.csrf()
@@ -27,7 +25,8 @@ public class WebSecurityConfig {
                 .authorizeRequests()
                 .antMatchers("/register/**").permitAll()
                 .antMatchers("/index").permitAll()
-                .antMatchers("/users").hasAnyRole("ADMIN", "READ_ONLY", "USER")
+                //.antMatchers("/users").permitAll()
+                .antMatchers("/users").hasAnyRole("ADMIN")
                 .and()
                 .formLogin(
                         form -> form

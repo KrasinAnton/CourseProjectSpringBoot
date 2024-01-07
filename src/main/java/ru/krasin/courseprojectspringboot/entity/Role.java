@@ -31,7 +31,7 @@ public class Role {
         this.name = name;
     }
 
-    // Дополнительные методы для удобства работы с пользователями и ролями
+    /*// Дополнительные методы для удобства работы с пользователями и ролями
     public void addUser(User user) {
         users.add(user);
         user.getRoles().add(this);
@@ -40,6 +40,6 @@ public class Role {
     public void removeUser(User user) {
         users.remove(user);
         user.getRoles().remove(this);
-    }
+    }*/
 }
 

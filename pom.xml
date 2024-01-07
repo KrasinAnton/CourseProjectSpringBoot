@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>ru.krasin</groupId>
-    <artifactId>1</artifactId>
+    <artifactId>ver_2</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>test-CourseProjectSpringBoot-thymeleaf</name>
     <description>CourseProjectSpringBoot-thymeleaf</description>
@@ -75,6 +75,24 @@
             <artifactId>h2</artifactId>
             <scope>runtime</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version> 42.3.8</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-rest</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+        </dependency>
+
+
     </dependencies>
 
     <build>
