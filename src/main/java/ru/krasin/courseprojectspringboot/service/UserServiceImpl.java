@@ -38,11 +38,8 @@ public class UserServiceImpl implements UserService {
         User user = new User();
         user.setName(userDto.getFirstName());
         user.setLastName(userDto.getLastName());
-        System.out.println("FirstName from userDto: " + userDto.getFirstName());
-        System.out.println("LastName from userDto: " + userDto.getLastName());
         user.setEmail(userDto.getEmail());
         user.setPassword(passwordEncoder.encode(userDto.getPassword()));
-
 
 
         List<Role> allRoles = roleRepository.findAll();
@@ -125,7 +122,7 @@ public class UserServiceImpl implements UserService {
     public void toggleAdminRole(String userEmail) {
         User user = userRepository.findByEmail(userEmail);
         Role roleAdmin = roleRepository.findByName("ROLE_ADMIN");
-        //userActionService.logUserAction(userEmail, "Toggled Admin role");
+        userActionService.logUserAction(userEmail, "Toggled Admin role");
         if (user != null && roleAdmin != null) {
             if (user.getRoles().contains(roleAdmin)) {
                 user.getRoles().remove(roleAdmin);
@@ -141,7 +138,7 @@ public class UserServiceImpl implements UserService {
     public void toggleReadRole(String userEmail) {
         User user = userRepository.findByEmail(userEmail);
         Role roleRead = roleRepository.findByName("ROLE_READ");
-        //userActionService.logUserAction(userEmail, "Toggled Read role");
+        userActionService.logUserAction(userEmail, "Toggled Read role");
         if (user != null && roleRead != null) {
             if (user.getRoles().contains(roleRead)) {
                 user.getRoles().remove(roleRead);
@@ -157,7 +154,7 @@ public class UserServiceImpl implements UserService {
     public void toggleUserRole(String userEmail) {
         User user = userRepository.findByEmail(userEmail);
         Role roleUser = roleRepository.findByName("ROLE_USER");
-        //userActionService.logUserAction(userEmail, "Toggled User role");
+        userActionService.logUserAction(userEmail, "Toggled User role");
         if (user != null && roleUser != null) {
             if (user.getRoles().contains(roleUser)) {
                 user.getRoles().remove(roleUser);
@@ -177,12 +174,9 @@ public class UserServiceImpl implements UserService {
             userDto.setLastName(str[1]);
         } else if (str.length == 1) {
             userDto.setFirstName(str[0]);
-            userDto.setLastName(user.getLastName()); // Используем фамилию из базы, если только одно слово
+            userDto.setLastName(user.getLastName());
         }
         userDto.setEmail(user.getEmail());
-
-        System.out.println("FirstName in UserDto: " + userDto.getFirstName());
-        System.out.println("LastName in UserDto: " + userDto.getLastName());
 
         List<String> roles = user.getRoles()
                 .stream()

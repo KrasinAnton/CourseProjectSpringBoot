@@ -47,6 +47,9 @@ public class StaffController {
             mav.addObject("staff", staffRepository.findAll());
         }
 
+        String userEmail = authentication.getName();
+        userActionService.logUserAction(userEmail, "Reading form");
+
         return mav;
     }
 
@@ -55,6 +58,9 @@ public class StaffController {
         ModelAndView mav = new ModelAndView("add-staff-form");
         Staff staff = new Staff();
         mav.addObject("staff", staff);
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String userEmail = authentication.getName();
+        userActionService.logUserAction(userEmail, "Reading form");
         return mav;
     }
     @PostMapping("/saveStaff")
