@@ -60,6 +60,9 @@
 
         <input type="text" th:field="*{phonenumber}" class="form-control col-4 mb-4" placeholder="Enter Phone number"/>
 
+        <input type="text" th:field="*{amountOfDays}" class="form-control col-4 mb-4" placeholder="Enter Amount of days"/>
+        <input type="text" th:field="*{amountOfWork}" class="form-control col-4 mb-4" placeholder="Enter Amount of work"/>
+
         <button type="submit" class="btn btn-outline-success">Save</button>
 
         <input type="hidden" th:field="*{id}"/>
@@ -70,6 +73,36 @@
     <hr/>
     <a th:href="@{/staff}">Back to list</a>
 </div>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('input[type="text"]').forEach(function(input) {
+            if (input.value.trim() === '' || input.value.trim() === '0') {
+                input.value = ''; // Очистка поля ввода, если оно пустое или содержит значение 0
+            }
+        });
+    });
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const amountOfDaysInput = document.querySelector('input[name="amountOfDays"]');
+        const amountOfWorkInput = document.querySelector('input[name="amountOfWork"]');
+
+        // Заполняем поля значениями по умолчанию, если они пустые перед отправкой формы
+        document.querySelector('form').addEventListener('submit', function() {
+            if (amountOfDaysInput.value.trim() === '') {
+                amountOfDaysInput.value = '0';
+            }
+            if (amountOfWorkInput.value.trim() === '') {
+                amountOfWorkInput.value = '0';
+            }
+        });
+    });
+</script>
+
+
 
 </body>
 </html>

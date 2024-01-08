@@ -15,6 +15,11 @@ import java.math.BigInteger;
 @Entity
 @Table(name = "STAFF")
 public class Staff {
+
+    private int amountOfDays;
+    private int amountOfWork;
+    private double productivity;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
@@ -58,6 +63,31 @@ public class Staff {
         this.userEmail = userEmail;
     }
 
+    // Геттеры и сеттеры для amountOfDays
+    public int getAmountOfDays() {
+        return amountOfDays;
+    }
 
+    public void setAmountOfDays(int amountOfDays) {
+        this.amountOfDays = amountOfDays;
+    }
 
+    // Геттеры и сеттеры для amountOfWork
+    public int getAmountOfWork() {
+        return amountOfWork;
+    }
+
+    public void setAmountOfWork(int amountOfWork) {
+        this.amountOfWork = amountOfWork;
+    }
+
+    // Геттеры и сеттеры для productivity
+    public double getProductivity() {
+        return productivity;
+    }
+
+    public void setProductivity(double productivity) {
+        this.productivity = productivity;
+    }
 }
+

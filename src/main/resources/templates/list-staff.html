@@ -61,12 +61,12 @@
     <table class="table table-bordered table-striped"
            id="staffTable">
         <thead class="table-dark">
-
         <tr>
             <th>Name</th>
             <th>Surname</th>
             <th>Appointment</th>
             <th>PhoneNumber</th>
+            <th>Productivity</th> <!-- Добавили новую колонку Productivity -->
             <td th:if="${not #authorization.expression('hasRole(''ROLE_READ'')')}">
                 <a th:href="@{/addStaffForm}" class="btn btn-secondary">Add Staff</a>
             </td>
@@ -78,6 +78,7 @@
             <td th:text="${staff.surname}" />
             <td th:text="${staff.appointment}" />
             <td th:text="${staff.phonenumber}" />
+            <td th:text="${staff.productivity}" /> <!-- Добавили ячейку для Productivity -->
 
             <td th:if="${not #authorization.expression('hasRole(''ROLE_READ'')')}">
                 <a th:href="@{/showUpdateForm(staffId=${staff.id})}" class="btn btn-outline-success exclude">Update</a>
@@ -140,6 +141,8 @@
             pagingType: 'full_numbers'
         });
     });
+
+
 </script>
 
 

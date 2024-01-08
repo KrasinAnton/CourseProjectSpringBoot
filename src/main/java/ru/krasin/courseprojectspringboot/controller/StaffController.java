@@ -65,6 +65,11 @@ public class StaffController {
     }
     @PostMapping("/saveStaff")
     public RedirectView saveStaff(@ModelAttribute Staff staff) {
+        // Вычислить производительность
+        if (staff.getAmountOfDays() != 0) {
+            double productivity = (double) staff.getAmountOfWork() / staff.getAmountOfDays();
+            staff.setProductivity(productivity);
+        }
         // Получение email текущего аутентифицированного пользователя
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String userEmail = authentication.getName(); // предполагается, что email пользователя хранится в имени пользователя
@@ -84,12 +89,12 @@ public class StaffController {
         Optional<Staff> optionalStaff = staffRepository.findById(staffId);
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String userEmail = authentication.getName();
-        userActionService.logUserAction(userEmail, "Show Update Form");
         Staff staff = new Staff();
         if (optionalStaff.isPresent()) {
             staff = optionalStaff.get();
         }
         mav.addObject("staff", staff);
+        userActionService.logUserAction(userEmail, "Update Form");
         return mav;
     }
 
