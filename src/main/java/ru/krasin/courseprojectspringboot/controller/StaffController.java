@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,9 +13,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 import ru.krasin.courseprojectspringboot.entity.Staff;
+import ru.krasin.courseprojectspringboot.entity.UserAction;
 import ru.krasin.courseprojectspringboot.repository.StaffRepository;
+import ru.krasin.courseprojectspringboot.repository.UserActionRepository;
 import ru.krasin.courseprojectspringboot.service.UserActionService;
 
+import java.util.List;
 import java.util.Optional;
 
 @Slf4j
@@ -24,6 +28,9 @@ public class StaffController {
     private StaffRepository staffRepository;
     @Autowired
     private UserActionService userActionService; // Инжектирование UserActionService
+    @Autowired
+    private UserActionRepository userActionRepository;
+
     @GetMapping("/staff")
     public ModelAndView getAllStaff() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -88,6 +95,14 @@ public class StaffController {
         userActionService.logUserAction(userEmail, "Delete Staff");
         staffRepository.deleteById(staffId);
         return new RedirectView("staff");
+    }
+
+    // Метод для страницы Logging
+    @GetMapping("/logging")
+    public String getLoggingPage(Model model) {
+        List<UserAction> userActions = userActionRepository.findAll(); // Получение всех действий из базы
+        model.addAttribute("userActions", userActions); // Передача действий в шаблон Thymeleaf
+        return "logging"; // Возвращаем название HTML-шаблона для страницы Logging
     }
 
 

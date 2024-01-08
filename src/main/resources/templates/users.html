@@ -28,6 +28,9 @@
                 <li class="nav-item">
                     <div class="navbar-text mt-0 me-0" th:text="${#authentication.principal.username}"></div>
                 </li>
+                <<li class="nav-item">
+                <a class="nav-link active " href="#" id="loggingButton">Logging</a>
+            </li>
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" th:href="@{/login}">Logout</a>
                 </li>
@@ -91,6 +94,10 @@
                 'aTargets': [-1] /* 1st one, start by the right */
             }],
             pagingType: 'full_numbers' // Устанавливает тип пагинации для отображения в виде кнопок
+        });
+
+        $("#loggingButton").click(function() {
+            window.location.href = "/logging";
         });
     })
 </script>

@@ -66,8 +66,8 @@
             <td th:text="${staff.phonenumber}" />
 
             <td th:if="${not #authorization.expression('hasRole(''ROLE_READ'')')}">
-                <a th:href="@{/showUpdateForm(staffId=${staff.id})}" class="btn btn-outline-success">Update</a>
-                <a th:href="@{/deleteStaff(staffId=${staff.id})}" class="btn btn-outline-danger">Delete</a>
+                <a th:href="@{/showUpdateForm(staffId=${staff.id})}" class="btn btn-outline-success exclude">Update</a>
+                <a th:href="@{/deleteStaff(staffId=${staff.id})}" class="btn btn-outline-danger exclude">Delete</a>
             </td>
 
         </tr>
@@ -92,20 +92,42 @@
 <script>
     $(document).ready(function () {
         $('#staffTable').DataTable({
-            dom: '<"d-flex justify-content-between align-items-center"fB>rtip', // Изменяем порядок элементов и добавляем классы для управления
+            dom: '<"d-flex justify-content-between align-items-center"fB>rtip',
             buttons: [
-                'copyHtml5',
-                'excelHtml5',
-                'pdfHtml5'
-                ],
-            'aoColumnDefs': [{
-                'bSortable': false,
-                'aTargets': [-1] /* 1st one, start by the right */
-            }],
-            pagingType: 'full_numbers' // Устанавливает тип пагинации для отображения в виде кнопок
+                {
+                    extend: 'copyHtml5',
+                    exportOptions: {
+                        columns: ':visible:not(.exclude)' // Включает все видимые столбцы, кроме тех, у которых есть класс "exclude"
+                    }
+                },
+                {
+                    extend: 'excelHtml5',
+                    exportOptions: {
+                        columns: ':visible:not(.exclude)'
+                    }
+                },
+                {
+                    extend: 'pdfHtml5',
+                    exportOptions: {
+                        columns: ':visible:not(.exclude)'
+                    }
+                }
+            ],
+            'aoColumnDefs': [
+                {
+                    'bSortable': false,
+                    'aTargets': [-1]
+                },
+                {
+                    'targets': [-1], // Скрыть последний столбец (кнопки "Update" и "Delete") при экспорте
+                    'className': 'exclude' // Добавить класс "exclude"
+                }
+            ],
+            pagingType: 'full_numbers'
         });
     });
 </script>
+
 
 </body>
 
