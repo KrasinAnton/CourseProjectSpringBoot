@@ -111,6 +111,9 @@ public class StaffController {
         return "logging"; // Возвращаем название HTML-шаблона для страницы Logging
     }
 
-
+        @GetMapping("/about")
+        public String aboutPage() {
+            return "about"; // возвращает имя HTML-шаблона (например, "about"), который соответствует странице About
+        }
 
 }

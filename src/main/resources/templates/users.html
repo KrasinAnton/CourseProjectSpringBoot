@@ -9,6 +9,20 @@
           crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.25/datatables.min.css"/>
 </head>
+<style>
+    body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        z-index: 1;
+        pointer-events: none;
+    }
+
+</style>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid justify-content-end">
@@ -24,17 +38,18 @@
                 </li>
             </ul>
 
-            <ul class="navbar-nav ms-auto">
+            <ul class="navbar-nav ms-auto d-flex align-items-center">
                 <li class="nav-item">
-                    <div class="navbar-text mt-0 me-0" th:text="${#authentication.principal.username}"></div>
+                    <div class="navbar-text mt-0 me-3" th:text="${#authentication.principal.username}"></div>
                 </li>
-                <<li class="nav-item">
-                <a class="nav-link active " href="#" id="loggingButton">Logging</a>
-            </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#" id="loggingButton">Logging</a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" th:href="@{/login}">Logout</a>
                 </li>
             </ul>
+
 
         </div>
     </div>
@@ -98,6 +113,9 @@
 
         $("#loggingButton").click(function() {
             window.location.href = "/logging";
+        });
+        $("#aboutButton").click(function() {
+            window.location.href = "/about";
         });
     })
 </script>

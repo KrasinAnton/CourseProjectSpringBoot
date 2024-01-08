@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Staff Management System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+          crossorigin="anonymous">
+    <style>
+        body {
+            background-image: url('https://top-fon.com/uploads/posts/2023-01/1674627768_top-fon-com-p-upravlenie-personalom-fon-dlya-prezentatsi-177.png');
+            background-size: 80%;
+            filter: blur(0px);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-attachment: fixed;
+            background-color: #ebebeb;
+            position: relative;
+            font-family: Arial, sans-serif;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .about {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ebebeb;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1;
+        }
+
+        .about h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .info {
+            margin-bottom: 20px;
+            color: #666;
+        }
+
+        .info h2 {
+            font-size: 1.2em;
+            margin-bottom: 5px;
+        }
+
+        .info p {
+            margin: 5px 0;
+        }
+
+        .back-button {
+            position: absolute;
+            top: 5px;
+            right: 20px;
+            z-index: 2;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 0.25rem;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+
+        .trr {
+            color: rgba(255, 0, 0, 0.03); /* Измените на нужный вам цвет */
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar trr" >A</a>
+
+        <div class="d-flex flex-row-reverse">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <a href="javascript:history.go(-1)" class="nav-link active back-button">Back</a>
+
+        </div>
+    </div>
+</nav>
+
+<br/><br/>
+
+<div class="about">
+    <h1>About the Application</h1>
+    <div class="info">
+        <h2>About the Developer</h2>
+        <p>Name: Krasin Ant</p>
+        <p>Email: krasin@example.com</p>
+        <p>Location: Ekb, Russia</p>
+    </div>
+
+    <div class="info">
+        <h2>About the Application</h2>
+        <p>This HR management application was developed to ensure efficient management of company
+            resources by centralizing information about employees, their roles, responsibilities
+            and statuses. It provides an intuitive interface for registration, authorization,
+            and employee data management.</p>
+        <p>Version: 1.0.0</p>
+        <p>Release Date: January 1, 2024</p>
+    </div>
+</div>
+</body>
+</html>
