@@ -36,9 +36,14 @@ public class UserServiceImpl implements UserService {
     @Override
     public void saveUser(UserDto userDto) {
         User user = new User();
-        user.setName(userDto.getFirstName() + " " + userDto.getLastName());
+        user.setName(userDto.getFirstName());
+        user.setLastName(userDto.getLastName());
+        System.out.println("FirstName from userDto: " + userDto.getFirstName());
+        System.out.println("LastName from userDto: " + userDto.getLastName());
         user.setEmail(userDto.getEmail());
         user.setPassword(passwordEncoder.encode(userDto.getPassword()));
+
+
 
         List<Role> allRoles = roleRepository.findAll();
 
@@ -92,6 +97,7 @@ public class UserServiceImpl implements UserService {
             userActionService.logUserAction(userEmail, "Add Admin role");
         }
     }
+
     @Override
     public void addReadRoleToUser(@RequestParam String userEmail) {
         User user = userRepository.findByEmail(userEmail);
@@ -165,11 +171,18 @@ public class UserServiceImpl implements UserService {
 
     private UserDto mapToUserDto(User user) {
         UserDto userDto = new UserDto();
-        userDto.setId(user.getId());
         String[] str = user.getName().split(" ");
-        userDto.setFirstName(str[0]);
-        userDto.setLastName(str[1]);
+        if (str.length >= 2) {
+            userDto.setFirstName(str[0]);
+            userDto.setLastName(str[1]);
+        } else if (str.length == 1) {
+            userDto.setFirstName(str[0]);
+            userDto.setLastName(user.getLastName()); // Используем фамилию из базы, если только одно слово
+        }
         userDto.setEmail(user.getEmail());
+
+        System.out.println("FirstName in UserDto: " + userDto.getFirstName());
+        System.out.println("LastName in UserDto: " + userDto.getLastName());
 
         List<String> roles = user.getRoles()
                 .stream()
@@ -179,7 +192,13 @@ public class UserServiceImpl implements UserService {
         userDto.setRoles(roles);
         return userDto;
     }
+
 }
+
+
+
+
+
 
 /* @Override
     public void addAdminRoleToUser(String userID) {
