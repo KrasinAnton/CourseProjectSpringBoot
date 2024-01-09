@@ -18,24 +18,20 @@ public class SecurityController {
     public SecurityController(UserService userService) {
         this.userService = userService;
     }
-
     @GetMapping("/index")
     public String home() {
         return "index";
     }
-
     @GetMapping("/login")
     public String login() {
         return "login";
     }
-
     @GetMapping("/register")
     public String showRegistrationForm(Model model) {
         UserDto user = new UserDto();
         model.addAttribute("user", user);
         return "register";
     }
-
     @PostMapping("/register/save")
     public String registration(@Validated @ModelAttribute("user") UserDto userDto,
                                BindingResult result,
@@ -51,7 +47,6 @@ public class SecurityController {
             model.addAttribute("user", userDto);
             return "/register";
         }
-
         userService.saveUser(userDto);
         return "redirect:/register?success";
     }
@@ -66,27 +61,22 @@ public class SecurityController {
         userService.addAdminRoleToUser(userEmail);
         return "redirect:/users";
     }
-
     @GetMapping("/addReadRole")
     public String addReadRole(@RequestParam String userEmail) {
         userService.addReadRoleToUser(userEmail);
         return "redirect:/users";
     }
-
     @GetMapping("/addUserRole")
     public String addUserRole(@RequestParam String userEmail) {
         userService.addUserRoleToUser(userEmail);
         return "redirect:/users";
     }
-
     @GetMapping("/addRole")
     public String addRoleToUser(@RequestParam String userEmail, @RequestParam String roleName) {
-        if (roleName.equals("ROLE_ADMIN")) {
-            userService.toggleAdminRole(userEmail);
-        } else if (roleName.equals("ROLE_READ")) {
-            userService.toggleReadRole(userEmail);
-        } else if (roleName.equals("ROLE_USER")) {
-            userService.toggleUserRole(userEmail);
+        switch (roleName) {
+            case "ROLE_ADMIN" -> userService.toggleAdminRole(userEmail);
+            case "ROLE_READ" -> userService.toggleReadRole(userEmail);
+            case "ROLE_USER" -> userService.toggleUserRole(userEmail);
         }
         return "redirect:/users";
     }

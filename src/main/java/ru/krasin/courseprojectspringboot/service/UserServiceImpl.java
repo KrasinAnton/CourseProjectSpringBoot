@@ -9,7 +9,6 @@ import ru.krasin.courseprojectspringboot.entity.Role;
 import ru.krasin.courseprojectspringboot.entity.User;
 import ru.krasin.courseprojectspringboot.repository.RoleRepository;
 import ru.krasin.courseprojectspringboot.repository.UserRepository;
-
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -20,19 +19,17 @@ public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
     private final RoleRepository roleRepository;
     private final PasswordEncoder passwordEncoder;
-    private final UserActionService userActionService; // Добавление UserActionService
-
+    private final UserActionService userActionService;
     @Autowired
     public UserServiceImpl(UserRepository userRepository,
                            RoleRepository roleRepository,
                            PasswordEncoder passwordEncoder,
-                           UserActionService userActionService) { // Внедрение UserActionService
+                           UserActionService userActionService) {
         this.userRepository = userRepository;
         this.roleRepository = roleRepository;
         this.passwordEncoder = passwordEncoder;
         this.userActionService = userActionService;
     }
-
     @Override
     public void saveUser(UserDto userDto) {
         User user = new User();
@@ -40,7 +37,6 @@ public class UserServiceImpl implements UserService {
         user.setLastName(userDto.getLastName());
         user.setEmail(userDto.getEmail());
         user.setPassword(passwordEncoder.encode(userDto.getPassword()));
-
 
         List<Role> allRoles = roleRepository.findAll();
 
@@ -65,17 +61,13 @@ public class UserServiceImpl implements UserService {
         } else {
             user.setRoles(Collections.singletonList(allRoles.get(1))); // Остальные пользователи - READ
         }
-
         userRepository.save(user);
         userActionService.logUserAction(userDto.getEmail(), "User saved");
     }
-
-
     @Override
     public User findUserByEmail(String email) {
         return userRepository.findByEmail(email);
     }
-
     @Override
     public List<Object> findAllUsers() {
         List<User> users = userRepository.findAll();
@@ -83,7 +75,6 @@ public class UserServiceImpl implements UserService {
                 .map(this::mapToUserDto)
                 .collect(Collectors.toList());
     }
-
     @Override
     public void addAdminRoleToUser(@RequestParam String userEmail) {
         User user = userRepository.findByEmail(userEmail);
@@ -94,7 +85,6 @@ public class UserServiceImpl implements UserService {
             userActionService.logUserAction(userEmail, "Add Admin role");
         }
     }
-
     @Override
     public void addReadRoleToUser(@RequestParam String userEmail) {
         User user = userRepository.findByEmail(userEmail);
@@ -105,7 +95,6 @@ public class UserServiceImpl implements UserService {
             userActionService.logUserAction(userEmail, "Add Read role");
         }
     }
-
     @Override
     public void addUserRoleToUser(@RequestParam String userEmail) {
         User user = userRepository.findByEmail(userEmail);
@@ -116,8 +105,6 @@ public class UserServiceImpl implements UserService {
             userActionService.logUserAction(userEmail, "Add User role");
         }
     }
-
-
     @Override
     public void toggleAdminRole(String userEmail) {
         User user = userRepository.findByEmail(userEmail);
@@ -126,14 +113,12 @@ public class UserServiceImpl implements UserService {
         if (user != null && roleAdmin != null) {
             if (user.getRoles().contains(roleAdmin)) {
                 user.getRoles().remove(roleAdmin);
-            } else {
-                user.getRoles().add(roleAdmin);
+            } else {user.getRoles().add(roleAdmin);
             }
             userRepository.save(user);
         }
 
     }
-
     @Override
     public void toggleReadRole(String userEmail) {
         User user = userRepository.findByEmail(userEmail);
@@ -142,14 +127,12 @@ public class UserServiceImpl implements UserService {
         if (user != null && roleRead != null) {
             if (user.getRoles().contains(roleRead)) {
                 user.getRoles().remove(roleRead);
-            } else {
-                user.getRoles().add(roleRead);
+            } else {user.getRoles().add(roleRead);
             }
             userRepository.save(user);
         }
 
     }
-
     @Override
     public void toggleUserRole(String userEmail) {
         User user = userRepository.findByEmail(userEmail);
@@ -158,14 +141,11 @@ public class UserServiceImpl implements UserService {
         if (user != null && roleUser != null) {
             if (user.getRoles().contains(roleUser)) {
                 user.getRoles().remove(roleUser);
-            } else {
-                user.getRoles().add(roleUser);
+            } else {user.getRoles().add(roleUser);
             }
             userRepository.save(user);
         }
     }
-
-
     private UserDto mapToUserDto(User user) {
         UserDto userDto = new UserDto();
         String[] str = user.getName().split(" ");
@@ -186,35 +166,4 @@ public class UserServiceImpl implements UserService {
         userDto.setRoles(roles);
         return userDto;
     }
-
 }
-
-
-
-
-
-
-/* @Override
-    public void addAdminRoleToUser(String userID) {
-
-    }
-
-    @Override
-    public void addReadRoleToUser(String userID) {
-
-    }
-
-    @Override
-    public void addUserRoleToUser(String userID) {
-
-    }*/
-
-/*@Override
-    public void giveUserRole(@RequestParam String email) {
-        User user = userRepository.findByEmail(email);
-        Role roleUser = roleRepository.findByName("ROLE_USER");
-        if (user != null && roleUser != null) {
-            user.setRoles(new ArrayList<>(Collections.singletonList(roleUser)));
-            userRepository.save(user);
-        }
-    }*/

@@ -81,9 +81,9 @@
             <td th:text="${user.roles}"></td>
 
             <td>
-                <a th:href="@{/addRole(userEmail=${user.email}, roleName='ROLE_ADMIN')}" class="btn btn-outline-danger ">Toggle Admin Role</a>
-                <a th:href="@{/addRole(userEmail=${user.email}, roleName='ROLE_READ')}" class="btn btn-outline-danger">Toggle Read Role</a>
-                <a th:href="@{/addRole(userEmail=${user.email}, roleName='ROLE_USER')}" class="btn btn-outline-danger">Toggle User Role</a>
+                <a th:href="@{/addRole(userEmail=${user.email}, roleName='ROLE_ADMIN')}" class="btn btn-outline-danger ">Admin Role</a>
+                <a th:href="@{/addRole(userEmail=${user.email}, roleName='ROLE_READ')}" class="btn btn-outline-danger">Read Role</a>
+                <a th:href="@{/addRole(userEmail=${user.email}, roleName='ROLE_USER')}" class="btn btn-outline-danger">User Role</a>
             </td>
 
         </tr>

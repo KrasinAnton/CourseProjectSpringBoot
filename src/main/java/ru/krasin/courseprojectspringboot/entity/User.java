@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +25,6 @@ public class User {
     @Column(nullable = false)
     private String lastName;
 
-
     @Column(nullable = false, unique = true)
     private String email;
 
@@ -44,11 +42,9 @@ public class User {
     public List<Role> getRoles() {
         return roles;
     }
-
     public String getLastName() {
         return lastName;
     }
-
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }

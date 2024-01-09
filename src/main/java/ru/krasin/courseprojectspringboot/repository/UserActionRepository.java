@@ -5,6 +5,5 @@ import ru.krasin.courseprojectspringboot.entity.UserAction;
 
 public interface UserActionRepository extends JpaRepository<UserAction, Long> {
 
-
 }
 

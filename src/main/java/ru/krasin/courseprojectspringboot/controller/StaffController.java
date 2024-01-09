@@ -24,13 +24,15 @@ import java.util.Optional;
 @Slf4j
 @Controller
 public class StaffController {
+    private final StaffRepository staffRepository;
+    private final UserActionService userActionService;
+    private final UserActionRepository userActionRepository;
     @Autowired
-    private StaffRepository staffRepository;
-    @Autowired
-    private UserActionService userActionService; // Инжектирование UserActionService
-    @Autowired
-    private UserActionRepository userActionRepository;
-
+    public StaffController(StaffRepository staffRepository, UserActionService userActionService, UserActionRepository userActionRepository) {
+        this.staffRepository = staffRepository;
+        this.userActionService = userActionService;
+        this.userActionRepository = userActionRepository;
+    }
     @GetMapping("/staff")
     public ModelAndView getAllStaff() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -46,13 +48,10 @@ public class StaffController {
             // Если у пользователя другая роль, показываем все записи
             mav.addObject("staff", staffRepository.findAll());
         }
-
         String userEmail = authentication.getName();
-        userActionService.logUserAction(userEmail, "Reading form");
-
+        userActionService.logUserAction(userEmail, "Reading form Staff");
         return mav;
     }
-
     @GetMapping("/addStaffForm")
     public ModelAndView addStaffForm() {
         ModelAndView mav = new ModelAndView("add-staff-form");
@@ -68,7 +67,8 @@ public class StaffController {
         // Вычислить производительность
         if (staff.getAmountOfDays() != 0) {
             double productivity = (double) staff.getAmountOfWork() / staff.getAmountOfDays();
-            staff.setProductivity(productivity);
+            double roundedProductivity = Math.round(productivity * 10.0) / 10.0; // Округляем до десятой доли
+            staff.setProductivity(roundedProductivity);
         }
         // Получение email текущего аутентифицированного пользователя
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -78,11 +78,10 @@ public class StaffController {
         staff.setUserEmail(userEmail);
 
         // Сохранение staff с указанием email пользователя
-        Staff savedStaff = staffRepository.save(staff);
+        Staff saveStaff = staffRepository.save(staff);
         userActionService.logUserAction(userEmail, "Added new staff");
         return new RedirectView("staff");
     }
-
     @GetMapping("/showUpdateForm")
     public ModelAndView showUpdateForm(@RequestParam Long staffId) {
         ModelAndView mav = new ModelAndView("add-staff-form");
@@ -97,10 +96,8 @@ public class StaffController {
         userActionService.logUserAction(userEmail, "Update Form");
         return mav;
     }
-
     @GetMapping("/deleteStaff")
     public RedirectView deleteStaff(@RequestParam Long staffId) {
-
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String userEmail = authentication.getName();
         userActionService.logUserAction(userEmail, "Delete Staff");
@@ -113,12 +110,11 @@ public class StaffController {
     public String getLoggingPage(Model model) {
         List<UserAction> userActions = userActionRepository.findAll(); // Получение всех действий из базы
         model.addAttribute("userActions", userActions); // Передача действий в шаблон Thymeleaf
-        return "logging"; // Возвращаем название HTML-шаблона для страницы Logging
+        return "logging";
     }
-
         @GetMapping("/about")
         public String aboutPage() {
-            return "about"; // возвращает имя HTML-шаблона (например, "about"), который соответствует странице About
+            return "about";
         }
 
 }

@@ -1,11 +1,9 @@
 package ru.krasin.courseprojectspringboot.entity;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -30,16 +28,5 @@ public class Role {
     public Role(String name) {
         this.name = name;
     }
-
-    /*// Дополнительные методы для удобства работы с пользователями и ролями
-    public void addUser(User user) {
-        users.add(user);
-        user.getRoles().add(this);
-    }
-
-    public void removeUser(User user) {
-        users.remove(user);
-        user.getRoles().remove(this);
-    }*/
 }
 

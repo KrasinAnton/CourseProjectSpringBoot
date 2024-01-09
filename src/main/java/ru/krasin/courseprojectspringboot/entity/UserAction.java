@@ -4,10 +4,9 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
 import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.util.Date;
+
 
 @Getter
 @Setter
@@ -38,13 +37,7 @@ public class UserAction {
     public String getAction() {
         return action;
     }
-
     public void setAction(String action) {
         this.action = action;
     }
 }
- /*@Column(name = "date_actions")
-    private Date dateActions;
-
-    @Column(name = "description")
-    private String description;*/

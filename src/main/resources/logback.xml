@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-    <!-- Аппендер для записи в файл -->
+
     <appender name="FILE" class="ch.qos.logback.core.FileAppender">
         <file>mylogs.log</file>
         <encoder>
@@ -8,7 +8,7 @@
         </encoder>
     </appender>
 
-    <!-- Аппендер для вывода в консоль -->
+
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
             <pattern>%d{HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</pattern>
